@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="{% static 'images/biologo.png' %}" rel="icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 bgcolor  p-0 shadow-lg" style="background-color:white;min-height: 100vh;">
+                <div class="fixed-start">
+                    <h2 class="text-center text-white p-2">
+                        <img src="{% static 'images/ad.png' %}" alt="" height="100" class=""><br>
+                        Admin Zone</h2><hr class="hr">
+                    <a href="{% url 'admin_dash' %}" class="text-decoration-none text-black"><p class="text-center text-white fw-bold"><i class="fa-solid fa-gauge-simple txtcolor"></i>&nbsp;Dashboard</p></a><hr class="hr">
+                    <div class="dropdown text-white">
+                        <button class="btn form-control dropdown-toggle fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-calendar-days txtcolor"></i>&nbsp;<span class="text-white">Manage Session</span>
+                        </button>
+                        <ul class="dropdown-menu text-center form-control">
+                          <li><a class="dropdown-item" href="{% url 'addsession' %}">Add Session</a></li>
+                          <li><a class="dropdown-item" href="{% url 'viewsession' %}">View Session</a></li>
+                        </ul>
+                    </div><hr class="hr">
+                    <div class="dropdown text-white">
+                        <button class="btn form-control dropdown-toggle fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-graduation-cap txtcolor"></i>&nbsp;<span class="text-white">Manage Courses</span>
+                        </button>
+                        <ul class="dropdown-menu text-center form-control">
+                          <li><a class="dropdown-item" href="{% url 'addcourse' %}">Add Courses</a></li>
+                          <li><a class="dropdown-item" href="{% url 'viewcourse' %}">View Courses</a></li>
+                        </ul>
+                    </div><hr class="hr">
+                    <div class="dropdown text-white">
+                        <button class="btn form-control dropdown-toggle fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-person txtcolor"></i>&nbsp;<span class="text-white">Manage Students</span>
+                        </button>
+                        <ul class="dropdown-menu text-center form-control">
+                          <li><a class="dropdown-item" href="{% url 'addstudent' %}">Add Students</a></li>
+                          <li><a class="dropdown-item" href="{% url 'viewstudents' %}">View Students</a></li>
+                          <!-- <li><a class="dropdown-item" href="{% url 'addstudent' %}">Bulk Students</a></li> -->
+                          <!-- <li><a class="dropdown-item" href="#">Verified Students</a></li> -->
+                        </ul>
+                    </div><hr class="hr">
+                    <div class="dropdown text-white">
+                        <button class="btn form-control dropdown-toggle fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-file-invoice txtcolor"></i>&nbsp;<span class="text-white">Manage Fees</span>
+                        </button>
+                        <ul class="dropdown-menu text-center form-control">
+                          <li><a class="dropdown-item" href="{% url 'vfees' %}">Verify Fees</a></li>
+                          <!-- <li><a class="dropdown-item" href="#">Verify Students</a></li> -->
+                        </ul>
+                    </div><hr class="hr">
+                    <a href="{% url 'showenq' %}" class="text-decoration-none text-center text-black fw-bold"><p class="text-white"><i class="fa-solid fa-paper-plane txtcolor"></i>&nbsp;View Enquires</p></a><hr class="hr"><br><br>
+
+                    <p class="text-center fw-bold"><a href="{% url 'adminchngpass' %}"  class="text-decoration-none text-white"><i class="fa-solid fa-arrow-right-arrow-left txtcolor"></i>&nbsp;Change Password</a></p><hr class="hr">
+
+                    <a href="{% url 'logout' %}" class="btn btn-light rounded-circle p-3 text-center" style="margin-left:40%;"><i class="fa-solid fa-right-from-bracket txtcolor fs-4"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                {% block admin %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--datatable-->
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+<!--datatable-->
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print', 'pageLength'
+            ],
+            lengthMenu: [
+                [10, 25, 50, 100, -1],
+                ['10', '25', '50', '100', 'all']
+            ]
+        });
+
+
+    });
+
+</script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

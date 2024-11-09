@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Administration {% endblock %}
+{% block body %}
+{% load static %}
+
+<!--========================== Header Start ===========================-->
+<div class="container-fluid p-0">
+    <div class="row" >
+        <div class="col-sm-3 shdw bgcolor" style="min-height: 550px;">
+            <h1 class="text-center text-light" style="margin-top:80%;font-size: 40px;text-shadow: 2px 2px 5px rgb(0, 132, 255);" >Administrative <br> Officer</h1>
+        </div>
+        <div class="col-sm-8 m-auto text-center">
+            <div class="card m-5 border-0 shdw txtshadow" style="width: 16rem;display: inline-block; ">
+                <img src="{% static 'images/admin.jpg' %}" class="card-img-top" alt="..." height="250px">
+                <div class="card-body">
+                  <h5 class="card-title txtcolor">Dr. Shashank Mishra</h5><hr>
+                  <p class="card-text">Central Instrumentation Facility</p>
+                </div>
+            </div>
+            <div class="card m-5 border-0 shdw txtshadow" style="width: 16rem;display: inline-block; ">
+                <img src="{% static 'images/amdin1.jpg' %}" class="card-img-top" alt="..." height="250px">
+                <div class="card-body">
+                  <h5 class="card-title txtcolor">Dr. Shashank Mishra</h5><hr>
+                  <p class="card-text">Central Instrumentation Facility</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--============================= Header End =============================-->
+
+<!--============================ About Start =====================-->
+
+<!--============================ About End =========================-->
+
+{% endblock %}

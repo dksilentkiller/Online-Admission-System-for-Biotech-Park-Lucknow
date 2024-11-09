@@ -1,0 +1,42 @@
+{% extends 'studentlayout.html' %}
+{% block student %}
+{% load static %}
+<div class="container-fluid p-0">
+    <div class="row mt-4">
+        <div class="col-sm-4 bgcolor text-center text-white shadow-lg" style="border-radius: 0px 25px 25px 0px " data-aos="fade-right"><h2>Update Profile</h2></div>
+    </div> 
+    <div class="row mt-2 p-1">
+        {% if msg %}
+        <div class="col-sm-12">
+            <div class="alert alert-success" role="alert">{{msg}}</div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row bg-white shadow-lg">
+        <div class="col-sm-6 ">
+            <img src="{% static 'images/QR.jpg' %}" alt="" class="w-100 m-5 " height="400px">
+        </div>
+        <div class="col-sm-6">
+            <h5 class="text-center inpcolor mt-5 p-2" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 20px;">Your Course Duration : {{hi.course}}</h5>
+            <h5 class="text-center inpcolor mt-0 p-2" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 20px;">Your Course Duration : {{hi.courseduraction}}</h5>
+            {% if hi %}
+            <h5 class="text-center inpcolor p-2" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 20px;">Your Course Fees : {{hi.coursefees}} ₨</h5>
+            {% endif %}
+            <form action="{% url 'feesave' %}" class="form-group p-4" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="col-sm-12">
+                    <p class="fw-bold">Enter Your Fee Ammount</p>
+                    <input type="text" class="form-control shadow rounded-pill" name="fees" placeholder="fee ammount">
+                </div>
+                <div class="col-sm-12 mt-3">
+                    <p class="fw-bold">Enter Your Fee Reciept</p>
+                    <input type="file" class="form-control shadow rounded-pill" name="fees_sc" placeholder="fee reciept">
+                </div>
+                <div class="col-sm12">
+                    <input type="submit" name="" id="" value="Submit" class="btn bt form-control my-4">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

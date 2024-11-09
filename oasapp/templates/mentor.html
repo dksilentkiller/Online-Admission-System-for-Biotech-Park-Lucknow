@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Members {% endblock %}
+{% block body %}
+{% load static %}
+
+<!--========================== Header Start ===========================-->
+<div class="container-fluid p-0">
+    <div class="row my-1" style="height: 200px;background-image: url(../static/images/chimacal.jpg);background-size: 100%;background-position: center 20%;">
+        <div class="col-sm-12" style="background-color: rgba(0, 0, 0, 0.664);">
+            <h1 class="text-center text-white" style="margin-top:6%;text-shadow: 5px 5px 5px black;">Distinguished Scientists And Mentors</h1>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="{% static 'images/Kamboj .jpg' %}" alt="" class="w-100 shadow" height="300px">
+                <h4 class="text-center mt-2">Dr. V.P. Kamboj</h4>
+                <p class="text-center mt-2 fs-5" style="font-family:Monotype corsiva ;text-align: justify;">NASI Honorary Scientist</p>
+            </div>
+            <div class="col-sm-9">
+                <h4>Dr. Ved Prakash Kamboj: Pioneer in Reproductive Biology</h4><hr>
+                <p style="text-align: justify;">Dr. Ved Prakash Kamboj, born in 1937 in Jullundur, Punjab, India, is a distinguished scientist celebrated for his pioneering contributions to reproductive biology, fertility regulation, and endocrinology. Educated at Punjab University, Chandigarh, he earned his B.Sc (Honors), M.Sc. (Honors), Ph.D., and D.Sc. Kamboj furthered his expertise with advanced training in Reproductive Biology and Contraceptive Technology in Germany. Joining the Central Drug Research Institute (CDRI) in Lucknow in 1961, Kamboj rose to become its Director in 1992. His tenure was marked by significant advancements in contraceptive technology, notably the development of ormeloxifene, a nonsteroidal contraceptive pill. As President of the National Science Academy of India (2005-2006), Kamboj played a crucial role in shaping India's scientific policies and research priorities. He has authored over 300 research papers and articles in renowned scientific journals, contributing profoundly to the field. Kamboj's exceptional contributions have earned him prestigious accolades such as the Ranbaxy Research Award and Vigyan Gaurav Samman, highlighting his profound impact on medical science and his enduring commitment to advancing scientific knowledge in India.
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--============================= Header End =============================-->
+
+<!--============================ About Start =====================-->
+
+<!--============================ About End =========================-->
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'adminlayout.html' %}
+{% block admin %}
+
+<div class="container-fluid p-0">
+    <div class="row mt-4">
+        <div class="col-sm-4 bgcolor text-center text-white shadow-lg" style="border-radius: 0px 25px 25px 0px " data-aos="fade-right"><h2>View Students</h2></div>
+    </div> 
+    <div class="row mt-5">
+        {% if msg %}
+        <div class="col-sm-12">
+            <div class="alert alert-success" role="alert">{{msg}}</div>
+        </div>
+        {% endif %}
+        <div class="col-sm-10 m-auto px-3 overflow-auto" data-aos="fade-down">
+         <table class="table" id="example">
+             <thead class="th">
+                 <tr class="text-center">
+                     <th>Sr No.</th>
+                     <th>Student Name</th>
+                     <th>Gender</th>
+                     <th>Email Address</th>
+                     <th>Contact No.</th>
+                     <th>DOB</th>
+                     <th>Father's Name</th>
+                     <th>Mother's Name</th>
+                     <th>Address</th>
+                     <th>Course</th>
+                     <th>Session</th>
+                     <th>Aadhar No.</th>
+                     <th>Aadhar Image</th>
+                     <th>Highscool %</th>
+                     <th>Highschool Marksheet </th>
+                     <th>Inter %</th>
+                     <th>Inter Marksheet</th>
+                     <th>Student Image</th>
+                     <th>Student Signature</th>
+                     <th>Application Status</th>
+                     <th>Action</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 {% for i in show %}
+                 <tr class="text-center">
+                     <td>{{i.sid}}</td>
+                     <td>{{i.name}}</td>
+                     <td>{{i.gender}}</td>
+                     <td>{{i.emailaddress}}</td>
+                     <td>{{i.contactno}}</td>
+                     <td>{{i.dob}}</td>
+                     <td>{{i.fname}}</td>
+                     <td>{{i.mname}}</td>
+                     <td>{{i.address}}</td>
+                     <td>{{i.course}}</td>
+                     <td>{{i.session}}</td>
+                     <td>{{i.aadharno}}</td>
+                     <td>
+                    {% if i.aadharpic %}
+                     <a href="{{i.aadharpic.url}}">read more</a>
+                    {% else %}
+                        No File
+                    {% endif %}
+                    </td>
+                     <td>{{i.hs_percent}}</td>
+                    <td>
+                    {% if i.aadharpic %}
+                     <a href="{{i.aadharpic.url}}">read more</a>
+                    {% else %}
+                        No File
+                    {% endif %}
+                    </td>
+                     <td>{{i.inter_percent}}</td>
+                    <td>
+                    {% if i.inter_marksheet %}
+                     <a  href="{{i.inter_marksheet.url}}">read more</a>
+                    {% else %}
+                        No File
+                    {% endif %}
+                    </td>
+                    <td>
+                    {% if i.pic %}
+                     <a href="{{i.pic.url}}">read more</a>
+                    {% else %}
+                       No File
+                    {% endif %}
+                    </td>
+                    <td>
+                    {% if i.sign %}
+                     <a href="{{i.sign.url}}">read more</a>
+                     {% else %}
+                        No File
+                    {% endif %}
+                    </td>
+                     <th>{{i.application_status}}</th>
+                     <td><a href="{% url 'approvelpedding' id=i.sid %}" class="btn btn-success">Approve</a></td>
+                 </tr>
+                 {% endfor %}
+             </tbody>
+         </table>
+        </div>
+     </div>
+</div>
+
+
+{% endblock %}

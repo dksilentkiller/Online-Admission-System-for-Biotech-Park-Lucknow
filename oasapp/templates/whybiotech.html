@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} Why Biotech Lucknow {% endblock %}
+{% block body %}
+{% load static %}
+
+<!--========================== Header Start ===========================-->
+<div class="container-fluid p-0">
+    <div class="row my-1" style="height: 200px;background-image: url(../static/images/chimacal.jpg);background-size: 100%;background-position: center 20%;">
+        <div class="col-sm-12" style="background-color: rgba(0, 0, 0, 0.664);">
+            <h1 class="text-center text-white" style="margin-top:6%;text-shadow: 5px 5px 5px black;">Why Biotech Park Lucknow?</h1>
+        </div>
+    </div>
+    <div class="container shdw">
+        <div class="row my-5 p-3">
+            <div class="col-sm-6">
+                <img src="{% static 'images/why.jpg' %}" alt="" class="w-100 ms-auto" height="600px">
+            </div>
+            <div class="col-sm-6">
+                <p style="text-align: justify;font-weight: 500;">Biotech park, Lucknow houses research institutions, laboratories, and startups focused on various domains of biotechnology. This nurtures a culture of innovation, reassures collaboration between academia and industry, and supports the development of innovative technologies and products. Biotech Park is contributing to advancements in healthcare by promoting research into disease diagnostics and offering new therapeutic solutions. This ultimately is leading to the development of new medicines, diagnostics, and feasible treatments. Focusing on benefits from biotechnological innovations to the agriculture sector through biotech strategies such as GM crops, disease and pest resistant crops etc. the park is supporting research and development in agricultural biotechnology, benefiting farmers in Uttar Pradesh and beyond. Investing in biotechnology infrastructure can enhance India's global competitiveness in the biotech sector. It can attract foreign investment, partnerships, and collaborations, while also enabling Indian biotech firms to compete on a global scale. Biotechnology requires specialized knowledge and skills. Establishing a biotech park in Lucknow can contribute to skill development by providing training programs, workshops, and educational opportunities in biotechnology and related fields, thereby enhancing the region's human capital. Biotechnology offers solutions for environmental challenges, such as bioremediation of polluted sites, development of renewable energy sources, and sustainable agricultural practices. A biotech park in Lucknow could support research and development in these areas, promoting environmental sustainability. Biotechnology is a high-growth sector globally, with applications in healthcare, agriculture, environment, and industry. Establishing a biotech park can attract investment, create job opportunities, and stimulate economic growth in Lucknow and the surrounding region.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--============================= Header End =============================-->
+
+<!--============================ About Start =====================-->
+
+<!--============================ About End =========================-->
+
+{% endblock %}

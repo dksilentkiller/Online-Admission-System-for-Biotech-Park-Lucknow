@@ -1,0 +1,371 @@
+{% extends 'base.html' %}
+{% block title %} Biotech Park {% endblock %}
+{% block body %}
+{% load static %}
+<!--========================= Slider start ======================================-->
+
+<div class="row">
+    <div class="col-sm-12 p-0">
+      <div id="carouselExampleCaptions" class="carousel slide" >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/silder.jpg' %}" class="d-block w-100" alt="..." >
+            <div class="carousel-caption d-none d-md-block box">
+              <h2 class="">Functional <span style="color: rgb(51, 177, 1);">Biotech Park </span> In North India</h2>
+              <p>Bio Tech Park is India&#39;s top research center, leading in biotechnology and scientific advancements</p>
+              <button class="btn text-white" style="background-color: rgb(8, 169, 8);">
+                Explore Now
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>            
+    </div>
+</div>
+<!--========================= Slider end =========================================-->
+  
+<!--======================== Announcement Start =====================================-->
+
+<div class="row mt-3 p-0">
+  <div class="col-sm-2 bgcolor text-light text-center fs-5 fw-bold p-1">Announcement</div>
+  <div class="col-sm-10 shadow-lg"><marquee direction="left" onmouseover="stop()" onmouseout="start()" class="fw-bold fs-5"><img src="{% static 'images/new1.png' %}" alt=""> &nbsp;Join our webinar on Bioinformatics, &quot;Unlocking the Power of Bioinformatics,&quot; on September 14th, 2024, at 11:00 AM! <a href="#" class=" fw-bold" style="color: darkblue;">Register her</a> &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="{% static 'images/new1.png' %}" alt=""> &nbsp;Join our webinar on Bioinformatics, &quot;Unlocking the Power of Bioinformatics,&quot; on September 14th, 2024, at 11:00 AM! <a href="#" class="fw-bold" style="color: darkblue;">Register her</a></marquee></div>
+</div>
+ 
+<!--======================== Announcement End ========================================-->
+
+<!--======================== Spectrum Start ===========================================-->
+<div class="row mt-5">
+  <div class="col-1 bgcolor my-2"></div>
+  <div class="col-5 bod">
+    <h2 class="text-center txtshadow">We Cover The Whole Spectrum</h2>
+  </div>
+  <div class="col-6 bgcolor my-2"></div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-10">
+      <section class="splide border">
+        <div class="splide__track">
+          <div class="splide__list">
+            <div class="card crd2 splide_slide">
+              <img src="{% static 'images/clean.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+
+<!--========================= Spectrum End ============================================-->
+  
+<!--======================== About Park Start =========================================-->
+<div class="row mt-5 bgcolor">
+  <div class="container">
+    <div class="row text-white m-5">
+      <div class="col-sm-6">
+        <h2 style="text-shadow: 7px 7px 5px black;">About Biotech Park</h2> <hr>
+        <p style="text-align: justify;">Welcome to Bio Tech Lucknow, India’s premier research center dedicated to pioneering advancements in biotechnology. As the nation’s number one research hub, we are at the forefront of innovative scientific research, driving breakthroughs that shape the future of healthcare, agriculture, and environmental sustainability. Our state-of-the-art facilities and world-class laboratories are staffed by a team of distinguished scientists and researchers committed to excellence. At Bio Tech Lucknow, we focus on cutting-edge research in genomics, bioinformatics, and molecular biology, striving to translate scientific discoveries into practical solutions that benefit society. We pride ourselves on fostering a collaborative environment that encourages creativity and innovation. Our partnerships with leading academic institutions, industry leaders, and government agencies enable us to stay ahead in the rapidly evolving field of biotechnology. Join us in our mission to push the boundaries of science and improve the quality of life through groundbreaking research and sustainable technological advancements. Bio Tech Lucknow is not just a research center; it is a beacon of progress and a catalyst for change in the biotech landscape of India.</p>
+      </div>
+      <div class="col-sm-6 mt-4">
+          <iframe width="539" height="400" src="https://www.youtube.com/embed/n4XnjmavROw" title="Virtual Tour of Bio Tech Park, Creative Design by Softpro Group of Companies" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-100"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!--========================== About Park End ==========================================-->
+  
+<!--======================= Our Mentor Start ==========================================-->
+<div class="row mt-5">
+  <div class="col-1 bgcolor my-2"></div>
+  <div class="col-3 bod">
+    <h2 class="text-center txtshadow">Our Mentors</h2>
+  </div>
+  <div class="col-8 bgcolor my-2"></div>
+</div>
+
+<div class="container-fluid">
+      <div class="row my-5">
+        <div class="col-sm-10 m-auto">
+          <div class="card crd shdw p-2" >
+            <img src="{% static 'images/Govermer.jpg' %}" class="card-img-top rounded-circle p-2" alt="..." style="border:1px solid rgb(34, 170, 0)">
+            <div class="card-body">
+              <h5 class="card-title txtcolor">Smt. Anandiben Patel</h5>
+              <p class="card-text fw-bold">Hon’ble Governor
+                Uttar Pradesh</p>
+            </div>
+          </div>
+          <div class="card crd shdw p-2" >
+            <img src="{% static 'images/yogiji.jpg' %}" class="card-img-top rounded-circle p-2" alt="..." style="border:1px solid rgb(34, 170, 0)">
+            <div class="card-body">
+              <h5 class="card-title txtcolor">Shri Yogi Adityanath</h5>
+              <p class="card-text fw-bold">Hon’ble Chief Minister
+                Uttar Pradesh</p>
+            </div>
+          </div>
+          <div class="card crd shdw p-2" >
+            <img src="{% static 'images/Minister2.jpg' %}" class="card-img-top rounded-circle p-2" alt="..." style="border:1px solid rgb(34, 170, 0)">
+            <div class="card-body">
+              <h5 class="card-title txtcolor">Shri Anil Kumar</h5>
+              <p class="card-text fw-bold">Hon’ble Cabinet Minister
+                      DST, GoUP </p>
+            </div>
+          </div>
+          <div class="card crd shdw p-2">
+            <img src="{% static 'images/Pandey.jpg' %}" class="card-img-top rounded-circle p-2" alt="..." height="" style="border:0.5px solid rgb(34, 170, 0);margin:2px;">
+            <div class="card-body">
+              <h5 class="card-title txtcolor">Prof. J. P. Pandey</h5>
+              <p class="card-text fw-bold">CEO
+                Biotech Park, <br>Lucknow</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<!--======================= Our Mentor End ============================================-->
+  
+<!--======================= Industry Start ============================================-->
+<div class="row mt-5">
+    <div class="col-1 bgcolor my-2"></div>
+    <div class="col-5 bod">
+      <h2 class="text-center txtshadow">Agriculture Services Industry</h2>
+    </div>
+    <div class="col-6 bgcolor my-2"></div>
+</div>
+<div class="row">
+  <div class="container">
+    <div class="row my-5" id="slider">
+      <div class="col-sm-10 m-auto" >
+        <ul id="agrul">
+          <hr>
+          <li><a href="#home" onmouseover="ag()" onmouseout="d()">Agriculture & Health</a></li><hr>
+          <li><a href="#home" onmouseover="ch()" onmouseout="d()">Chemical & Metrical</a></li><hr>
+          <li><a href="#home" onmouseover="so()" onmouseout="d()">Soil Analysis</a></li><hr>
+          <li><a href="#home" onmouseover="solt()" onmouseout="d()">Soil Tillage</a></li><hr>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--======================== Industry End ==============================================-->
+  
+<!--======================= Research Project Start ======================================-->
+<div class="row bgcolor">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 m-auto">
+          <h2 class="text-white text-center my-5">Biotech Award Winning Research Project</h2>
+          <div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_1.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_2.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_3.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_4.jpg' %}" class="card-img-top" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_2.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_3.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                        <div class="card crd2">
+                  <img src="{% static 'images/IMG_4.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_5.jpg' %}" class="card-img-top" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_3.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_4.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_5.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/IMG_6.jpg' %}" class="card-img-top" alt="...">
+                </div>
+              </div>
+                      
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next " type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon text-black" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!--======================= Research Project ============================================-->
+  
+<!--======================== News And Updates Start============================================-->
+<div class="row my-5">
+    <div class="col-1 bgcolor my-2"></div>
+    <div class="col-5 bod">
+      <h2 class="text-center txtshadow">Latest News And Updates</h2>
+    </div>
+    <div class="col-6 bgcolor my-2"></div>
+</div>
+
+<div class="container-fluid mb-5">
+      <div class="row">
+        <div class="col-sm-10 m-auto">
+          <div class="card crd2 shdw" >
+            <img src="{% static 'images/new1.jpeg' %}" class="card-img-top" alt="..." height="200px">
+            <div class="card-body">
+              <p class="card-text">"On March 13, 2023, a lease was signed for Vatican Shona Agrotech to set up a tissue culture lab at Biotech Park, Lucknow."</p>
+            </div>
+          </div>
+          <div class="card crd2 shdw" >
+            <img src="{% static 'images/new2.jpeg' %}" class="card-img-top" alt="..." height="200px">
+            <div class="card-body">
+              <p class="card-text">"On February 24, 2023, Awanish Kumar Awasthi visited Biotech Park, Lucknow, and interacted with the incubatees there."</p>
+            </div>
+          </div>
+          <div class="card crd2 shdw">
+            <img src="{% static 'images/events.jpeg' %}" class="card-img-top" alt="..." height="200px">
+            <div class="card-body">
+              <p class="card-text">"On February 16, 2023, launched 'GreenRTM dye' and qPCR Mastermix at Biotech Park, inaugurated by Alok Kumar."</p>
+            </div>
+          </div>
+          <div class="card crd2 shdw" >
+            <img src="{% static 'images/eventee.jpeg' %}" class="card-img-top" alt="..." height="200px">
+            <div class="card-body">
+              <p class="card-text">"A two-day workshop on "Production & Cultivation of Cordyceps militaris" was organized from April 22 to 24, 2022."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-sm-2 m-auto">
+          <a href=""><button type="button" class="bgcolor text-white border-0 rounded-pill py-3 px-5 fw-bold">Read More</button></a>
+        </div>
+      </div>
+</div>
+
+<!--======================== News And Updates End ============================================-->
+  
+<!--=========================== Training Start =====================================-->
+<div class="row bgcolor">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 m-auto">
+          <h2 class="text-white my-5"><span class="border-5 border-bottom border-white pb-1">Training </span> Programme For Students</h2>
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card crd2">
+                  <img src="{% static 'images/tra1.jpeg' %}" class="card-img-top p-2" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Biodiesel - Production  Testing</h5>
+                  </div>
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/tra2.jpg' %}" class="card-img-top p-2" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Bioinformatics</h5>
+                  </div>
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/tra3.jpg' %}" class="card-img-top p-2" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Industrial Biotechnology</h5>
+                  </div>
+                </div>
+                <div class="card crd2">
+                  <img src="{% static 'images/tra5.jpeg' %}" class="card-img-top p-2" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Microbiology</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                        
+              </div>
+              <div class="carousel-item">
+                      
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        
+      </div>
+    </div>
+</div>
+<!--=========================== Training End =======================================-->
+  
+<!--=========================== Clients Start =======================================-->
+<div class="row my-5">
+  <div class="col-1 bgcolor my-2"></div>
+  <div class="col-3 bod">
+    <h2 class="text-center txtshadow">Our Clients</h2>
+  </div>
+  
+  <div class="col-8 bgcolor my-2"></div>
+
+  <div class="row mt-5">
+    <div class="col-sm-3" data-aos="fade-up">
+        <img src="{% static 'images/cp1.png' %}" alt="Client 1"
+            style="height: 150px; object-fit: contain; width: 100%;">
+    </div>
+    <div class="col-sm-3" data-aos="fade-up" data-aos-delay="100">
+        <img src="{% static 'images/cp2.jpeg' %}" alt="Client 2"
+            style="height: 150px; object-fit: contain; width: 100%;">
+    </div>
+    <div class="col-sm-3" data-aos="fade-up" data-aos-delay="200">
+        <img src="{% static 'images/cp3.jpg' %}" alt="Client 3"
+            style="height: 150px; object-fit: contain; width: 100%;">
+    </div>
+    <div class="col-sm-3" data-aos="fade-up" data-aos-delay="300">
+        <img src="{% static 'images/cp5.jpg' %}" alt="Client 4"
+            style="height: 150px; object-fit: contain; width: 100%;">
+    </div>
+</div>
+</div>
+<!--=========================== Clients End =========================================-->
+{% endblock %}

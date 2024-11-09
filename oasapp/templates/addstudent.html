@@ -1,0 +1,44 @@
+{% extends 'adminlayout.html' %}
+{% block admin %}
+<div class="container-fluid p-0">
+    <div class="row my-4">
+        <div class="col-sm-4 bgcolor text-center text-white shadow-lg" style="border-radius: 0px 25px 25px 0px " data-aos="fade-right"><h2>Add Student</h2></div>
+    </div>
+    <div class="row p-5 bg-light m-3 shdw rounded-3">
+        <form action="{% url 'savestudent' %}" method="post" class="form-group"> 
+            {% for i in messages %}
+                <div class="col-sm-12">
+                    <div class="alert alert-success" role="alert">{{i}}</div>
+                </div>
+            {% endfor %}
+            {% csrf_token %}
+            <div class="col-sm-12 mb-1" data-aos="fade-up">
+                <p class="txtcolor fw-bold" for="name">Enter Student Name</p>
+                <input type="text" name="name" class="form-control rounded-pill inpcolor" id="name" required>
+            </div> 
+            <div class="col-sm-12 mb-2" data-aos="fade-up">
+                <p class="txtcolor fw-bold" for="emailaddress">Enter Email Address</p>
+                <input type="email" name="emailaddress" class="form-control rounded-pill inpcolor" id="emailaddress" required>
+            </div>
+            <div class="col-sm-12 mb-2" data-aos="fade-up">
+                <p class="txtcolor fw-bold" for="contactno">Enter Contact No.</p>
+                <input type="text" name="contactno" class="form-control rounded-pill inpcolor" id="contactno" required>
+            </div>
+            <div class="col-sm-12 mb-1" data-aos="fade-up">
+                <p class="txtcolor fw-bold" for="password">Enter Password</p>
+                <input type="text" name="password" class="form-control rounded-pill inpcolor" id="password" value="123" readonly>
+            </div>
+            <div class="col-sm-12 mb-2" data-aos="fade-up">
+                <span class="txtcolor fw-bold me-3" for="gender">Gender : </span>
+                <input type="radio" class="inpcolor" name="gender" id="gender" value="male">&nbsp;<span class="txtcolor fs-5">Male</span>
+                <input type="radio" class="inpcolor" name="gender" id="gender" value="female">&nbsp;<span class="txtcolor fs-5">Female</span>
+                <input type="radio" class="inpcolor" name="gender" id="gender" value="other">&nbsp;<span class="txtcolor fs-5">Other</span>
+            </div>
+            <div class="col-sm-12 my-3" >
+                <input type="submit" class="form-control btn bt rounded-pill" id="mname" value="Submit">
+            </div>
+        
+        </form>
+    </div>
+</div>
+{% endblock %}

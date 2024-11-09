@@ -1,0 +1,99 @@
+{% extends 'studentlayout.html' %}
+{% block student %}
+<div class="container-fluid p-0">
+    <div class="row mt-4">
+        <div class="col-sm-4 bgcolor text-center text-white shadow-lg p-2" style="border-radius: 0px 25px 25px 0px " data-aos="fade-right"><h3>Document Verification</h3></div>
+    </div> 
+    <div class="row m-3 shdw p-3 rounded-3">
+        <form action="{% url 'docsave' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if msg %}
+                <div class="col-sm-12">
+                    <div class="alert alert-success" role="alert">{{msg}}</div>
+                </div>
+            {% endif %}
+            <div class="row mb-2">
+                <div class="col-sm-4" data-aos="fade-down">
+                    <p class="txtcolor fw-bold">Enter Your Course</p>
+                    <select name="course" id="" class="form-control inpcolor rounded-pill text-center" required>
+                        <option value="" class="rounded-pill">--------------Select Course----------------</option>
+                        {% for i in cr %}
+                        <option value="{{i.course_name}}" class="">{{i.course_name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-sm-4" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Session</p>
+                    <select name="session" id="" class="form-control inpcolor rounded-pill text-center" required>
+                        <option value="">---------------Select Session-----------------</option>
+                            {% for i in sc %}
+                        <option value="{{i.ses}}">{{i.ses}}</option>
+                        {% endfor %}
+                        </option>
+
+                    </select>
+                </div>
+                    <div class="col-sm-4" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Course Duration</p>
+                    <select name="course_duration" class="form-control rounded-pill text-center inpcolor" required>
+                        <option value="">-----select course duration-----</option>
+                        <option value="45 Days">45 Days</option>
+                        <option value="2 Months">2 Months</option>
+                        <option value="3 Months">3 Months</option>
+                        <option value="6 Months">6 Months</option>
+                    </select><br>
+
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-6" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Aadhar No.</p>
+                    <input type="text" name="aadharno" id="" class="form-control inpcolor rounded-pill" required>
+                </div>
+                <div class="col-sm-6" data-aos="fade-down">
+                    <p class="txtcolor fw-bold">Upload Aadhar Picture</p>
+                    <input type="file" name="aadharpic" id="" class="form-control inpcolor rounded-pill" required>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-6" data-aos="fade-down">
+                    <p class="txtcolor fw-bold">Enter Your Highschool %</p>
+                    <input type="text" name="hs_percent" id="" class="form-control inpcolor rounded-pill" required>
+                </div>
+                <div class="col-sm-6" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Upload Highschool Marksheet</p>
+                    <input type="file" name="hs_marksheet" id="" class="form-control inpcolor rounded-pill" required>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-6" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Intermediate %</p>
+                    <input type="text" name="inter_percent" id="" class="form-control inpcolor rounded-pill" required>
+                </div>
+                <div class="col-sm-6" data-aos="fade-down">
+                    <p class="txtcolor fw-bold">Upload Intermediate Marksheet</p>
+                    <input type="file" name="inter_marksheet" id="" class="form-control inpcolor rounded-pill" required>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-12" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Picture</p>
+                    <input type="file" name="pic" id="" class="form-control inpcolor rounded-pill" required>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12" data-aos="fade-down">
+                    <p class="txtcolor fw-bold">Enter Your Signature</p>
+                    <input type="file" name="sign" id="" class="form-control inpcolor rounded-pill" required>
+               </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-12">
+                    <input type="submit" class="form-control btn bt" value="submit">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

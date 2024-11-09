@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} Location {% endblock %}
+{% block body %}
+{% load static %}
+
+<!--========================== Header Start ===========================-->
+<div class="container-fluid p-0">
+    <div class="row my-1" style="height: 200px;background-image: url(../static/images/chimacal.jpg);background-size: 100%;background-position: center 20%;">
+        <div class="col-sm-12" style="background-color: rgba(0, 0, 0, 0.664);">
+            <h1 class="text-center text-white" style="margin-top:6%;text-shadow: 5px 5px 5px black;">CEO Desk</h1>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="{% static 'images/Pandey.jpg' %}" alt="" class="w-100 shadow" height="300px">
+                <h4 class="text-center mt-3 ">J.P. Pandey</h4>
+                <p class="text-center mt-3 fs-5" style="font-family:Monotype corsiva ;">CEO Biotech Park
+                    (V.C) Dr. APJ Abdul Kalam Technical University.</p>
+            </div>
+            <div class="col-sm-9">
+                <h4 class="bgcolor text-white p-2">Message from the CEO</h4><hr>
+                <p style="text-align: justify;">Dear Students,<br>
+                    As the Chief Executive Officer of Biotech Park and the Vice Chancellor of Dr. APJ Abdul Kalam Technical University, it gives me immense pleasure to connect with you. You are the future innovators, leaders, and changemakers of our society. Remember, the journey of a thousand miles begins with a single step. Each challenge you face is an opportunity to learn, grow, and excel. Embrace every moment with curiosity and passion. The world of biotechnology and technology is vast and full of endless possibilities. Your hard work, dedication, and innovative spirit will pave the way for groundbreaking discoveries and advancements. Believe in yourself, stay committed to your goals, and never shy away from thinking big. Success is not just about achieving your dreams but also about making a positive impact on the world around you. Together, let's create a brighter, healthier, and more sustainable future. Keep pushing boundaries, stay curious, and remember that the power to change the world lies within you. Best wishes for your journey ahead.
+                    Warm regards,<b><br>
+                        J.P. Pandey  <br>
+                        Chief Executive Officer, Biotech Park <br>
+                        (V.C) Dr. APJ Abdul Kalam Technical University <br>
+                        Tel: +91 522-2635050, 4012091 (Ext. 101), 2733174 (Direct) <br>
+                        Email:- ceo@biotechpark.org.in</b></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--============================= Header End =============================-->
+
+<!--============================ About Start =====================-->
+
+<!--============================ About End =========================-->
+
+{% endblock %}

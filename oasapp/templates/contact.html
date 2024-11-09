@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us {% endblock %}
+{% load static %}
+{% block body %}
+    
+<div class="container-fluid">
+    <div class="row m-auto my-5">
+        <div class="col-sm-10 m-auto">
+            <div class="row">
+                <div class="col-sm-3 shdw rounded-5" style="min-height:500px ; background-image: url(../static/images/soiltest.jpg);background-size: cover;background-repeat: no-repeat;">
+                    <h1 class="text-white text-center" style="margin-top: 85%;text-shadow: 5px 5px 5px black;">Contact <br> Us</h1>
+                </div>
+                <div class="col-sm-9 bg-white shdw rounded-5">
+                    {% if msg %}
+                    <div class="row mt-3 mb-0">
+                        <div class="col-sm-12">
+                            <div class="alert alert-success" role="alert">{{msg}}</div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <form class="row g-3 my-3 p-3" method="post">
+                        {% csrf_token %}
+                        <div class="col-sm-6">
+                            <label for="name" class="form-label text-primary fw-bold">Name :</label>
+                            <input type="text" name="name" class="form-control rounded-pill" id="name" style="background-color:rgba(173, 216, 230, 0.712); border:1px solid lightblue ;">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="gender" class="form-label text-primary fw-bold">Gender :</label> <br>
+                            <input type="radio" name="gender" class="form-check-input mx-3 mt-2" value="Male"><span class="text-primary">Male</span>
+                            <input type="radio" name="gender" class="form-check-input mx-3 mt-2" value="Female"><span class="text-primary">Female</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="contactno" class="form-label text-primary fw-bold">Contact No. :</label>
+                            <input type="text" name="contactno" class="form-control rounded-pill" id="contactno" style="background-color:rgba(173, 216, 230, 0.712); border:1px solid lightblue ;">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="emailaddress" class="form-label text-primary fw-bold">Email Address :</label>
+                            <input type="email" name="emailaddress" class="form-control rounded-pill" id="emailaddress" style="background-color:rgba(173, 216, 230, 0.712); border:1px solid lightblue ;">
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="address" class="form-label text-primary fw-bold">Address :</label>
+                            <textarea name="address" id="address" class="form-control rounded-pill "  style="background-color:rgba(173, 216, 230, 0.712); border:1px solid lightblue ;" rows="2"></textarea>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="enquirytext" class="form-label text-primary fw-bold">Enquiry Text :</label>
+                            <textarea name="enquirytext" id="enquirytext" class="form-control rounded-pill "  style="background-color:rgba(173, 216, 230, 0.712); border:1px solid lightblue ;" rows="2"></textarea>
+                        </div>
+                        <div class="col-12 text-center pb-4">
+                            <button type="submit" class="btn bt w-100 fs-5 shadow-lg py-1 fw-bold rounded-pill">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+{% endblock %}

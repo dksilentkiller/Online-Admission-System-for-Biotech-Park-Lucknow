@@ -1,0 +1,14 @@
+{% extends 'studentlayout.html' %}
+
+
+{% block student %}
+{% if sh  %}
+<div class="alert alert-success m-3 mt-5 p-5" role="alert">
+    <p>Congratulation Student ! Your Addmission Process is Completed.</p>
+<span>Name:&nbsp;<b>{{sh.name}}</b></span>
+<span>Course Name:&nbsp;<b>{{sh.course}}</b></span>
+<span>Course Duration:&nbsp;<b>{{sh.courseduraction}}</b></span>
+<span>Course Session:&nbsp;<b>{{sh.session}}</b></span>
+</div>
+{% endif  %}
+{% endblock %}

@@ -1,0 +1,180 @@
+body
+{
+    min-width: none;
+    max-width:100% ;
+    background-color:whitesmoke;
+}
+.bgcolor
+{
+    background:linear-gradient(rgb(1, 1, 95),rgb(0, 75, 119),#000000);
+}
+
+.a 
+{
+    text-decoration: none;
+    color: white;
+}
+#bioname
+{
+    font-size: 20px;
+    font-weight:bold;
+}
+#bioname p
+{
+    color:white;
+    text-decoration: none;
+    line-height:0;
+    font-weight:normal;
+    font-size: 12px;
+    margin-top: -15px;
+    margin-left: 45px;
+    text-align: center;
+}
+
+#navul li
+{
+    display: inline-flex;
+}
+#navul li a
+{
+    color: white;
+    font-size:17px;
+}
+#navul li a:hover
+{
+    border-bottom:4px solid white;
+}
+.drop li a:hover
+{
+    background-color: rgba(48, 86, 253, 0.342);
+}
+.box
+{  
+    width: 40%; 
+    text-align: left; 
+    margin-top: 50%;
+    margin-left: -100px;
+    color: white;
+    text-shadow: 7px 7px 5px black;
+} 
+.box:hover
+{
+    transform: scale(1.05);
+    transition: 1.5s ease;
+} 
+.box h2
+{
+    font-size: 40px;
+    font-weight: bolder;
+}
+.txtshadow
+{
+    text-shadow: 7px 7px 10px gray;
+    font-weight: bold;
+    color: black;
+}
+.txtcolor
+{
+    color:rgb(34, 170, 0);
+}
+.shdw
+{
+    box-shadow: 0px 0px 15px rgb(51, 49, 49);
+    
+}
+.card:hover
+{
+    transform: scale(1.05);
+    transition: 1.5s ease;
+}
+.crd
+{
+    margin:5px;
+    width: 16rem;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+.crd:hover
+{
+   transform: scale(1.05);
+    transition: 1.5s ease;
+}
+#slider
+{
+    min-height: 500px;
+}
+#agrul 
+{
+    padding: 25px;
+    list-style-type:none;
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.247);
+}
+
+#agrul li a
+{
+    text-decoration: none;
+    color: white;
+    text-shadow: 7px 7px 5px black;
+}
+#agrul li a:hover
+{
+    font-size: 38px;
+    color:greenyellow;
+}
+.crd2
+{
+    margin:15px;
+    min-width: none;
+    max-width: 14rem;
+    display: inline-block;
+    border:none;
+}
+.flinks a{
+    text-decoration: none;
+    color: rgb(32, 160, 0);
+    background-color: white;
+    margin-right: 8px;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 25%;
+}
+.flinks a:hover
+{
+    padding: 10px;
+}
+.footerul li a:hover 
+{
+    margin-left:10px;
+    text-decoration: underline;
+    color: rgb(87, 255, 45);
+    
+}
+.bt{
+    background-color: rgb(1, 160, 1);
+    color:white;
+    border-radius:30px;
+}
+.bt:hover
+{
+    background-color: none;
+    border: 1px solid rgb(1, 160, 1);
+    color:rgb(1, 160, 1);
+}
+.th tr th
+{
+    background-color: rgb(2, 204, 2);
+    color: white;
+}
+.inpcolor
+{
+    background-color: rgba(0, 211, 218, 0.205);
+}
+.hr 
+{
+    color: aliceblue;
+}

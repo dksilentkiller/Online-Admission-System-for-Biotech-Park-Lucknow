@@ -1,0 +1,37 @@
+{% extends 'adminlayout.html' %}
+{% block admin %}
+<div class="container-fluid p-0">
+    <div class="row mt-4">
+        <div class="col-sm-4 bgcolor text-center text-white shadow-lg" style="border-radius: 0px 25px 25px 0px " data-aos="fade-right"><h2>Add Course</h2></div>
+    </div>
+    <div class="row mt-5 mx-3">
+        <div class="col-sm-12 p-4 bg-light shadow-lg" data-aos="fade-down">
+            <form action="{% url 'savecourse' %}" class="form-group" method="post">
+                {% csrf_token %}
+                <p class="txtcolor fs-5">Enter Course Session</p>
+                <select name="course_session" class="form-control rounded-pill text-center" required>
+                    <option value="">-----select Session-----</option>
+                    {% for i in ad %}
+                    <option value="{{i.ses}}">{{i.ses}}</option>
+                    {% endfor %}
+                </select>
+                <p class="txtcolor fs-5">Enter Course Name</p>
+                <input type="text" name="course_name" class="form-control rounded-pill" required>
+                <p class="txtcolor fs-5">Enter Course_fees</p>
+                <input type="text" name="course_fees" class="form-control rounded-pill" required>
+                <br>
+                <select name="course_duration" class="form-control rounded-pill text-center" required>
+                    <option value="">-----select course duration-----</option>
+                    <option value="45 Days">45 Days</option>
+                    <option value="2 Months">2 Months</option>
+                    <option value="3 Months">3 Months</option>
+                    <option value="6 Months">6 Months</option>
+                </select><br>
+                <input type="submit" class="btn bt form-control" value="Add Course">
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

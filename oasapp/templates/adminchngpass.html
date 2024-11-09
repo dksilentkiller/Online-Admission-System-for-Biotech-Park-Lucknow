@@ -1,0 +1,34 @@
+{% extends 'adminlayout.html' %}
+{% block admin %}
+<div class="container-fluid p-0"></div>
+    <div class="row mt-4">
+        <div class="col-sm-4 bgcolor text-center text-white shadow-lg" style="border-radius: 0px 25px 25px 0px " data-aos="fade-right"><h2>Change Password</h2></div>
+    </div> 
+    <div class="row py-4 my-5">
+        <div class="col-sm-6 p-3 m-auto rounded-5">
+                <main class="form-signin w-100 m-auto">
+                    <form method="post">
+                     {% csrf_token %}
+                      <h4 class="h3 mb-3 fw-bold text-center txtcolor" >Change Your Password</h4>
+                      {% if msg %}
+                        <div class="alert alert-danger">{{msg}}</div>
+                      {% endif %}
+                      <div class="form-floating mt-3">
+                        <input name="oldpass" type="password" class="form-control rounded-pill shadow" id="floatingInput" placeholder="Enter Old Password">
+                        <label for="floatingInput">Enter Old Password</label>
+                      </div>
+                      <div class="form-floating mt-3">
+                        <input name="newpass" type="password" class="form-control rounded-pill shadow" id="floatingPassword" placeholder="Enter New Password">
+                        <label for="floatingPassword">Enter New Password</label>
+                      </div>
+                      <div class="form-floating mt-3">
+                        <input name="confpass" type="password" class="form-control rounded-pill shadow"  id="floatingPassword" placeholder="Confirm Password">
+                        <label for="floatingPassword">Confirm Password</label>
+                      </div>
+                      <button class="btn bt w-100 py-2 fw-bold my-3" type="submit">Change Password</button>
+                    </form>
+                </main>            
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Staff {% endblock %}
+{% block body %}
+{% load static %}
+
+<!--========================== Header Start ===========================-->
+<div class="container-fluid p-0">
+    
+        <div class="row my-1" style="height: 200px;background-image: url(../static/images/IMG_5.jpg);background-size: 100%;background-position: center 40%;">
+            <div class="col-sm-12" style="background-color: rgba(0, 0, 0, 0.664);">
+                <h1 class="text-center text-white" style="margin-top:6%;text-shadow: 5px 5px 5px black;">Scientific Staff</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 m-auto my-5 text-center">
+                <div class="card me-4 border-0 shdw txtshadow" style="width: 15rem;display: inline-block; ">
+                    <img src="{% static 'images/smishra1.jpg' %}" class="card-img-top p-1 rounded-circle" alt="..." height="250px">
+                    <div class="card-body">
+                      <h5 class="card-title txtcolor">Dr. Shashank Mishra</h5><hr>
+                      <p class="card-text">Central Instrumentation Facility</p>
+                    </div>
+                </div>
+                <div class="card me-4 border-0 shdw txtshadow" style="width: 15rem;display: inline-block;">
+                    <img src="{% static 'images/deepika.png' %}" class="card-img-top p-1 rounded-circle" alt="..." height="250px">
+                    <div class="card-body">
+                      <h5 class="card-title txtcolor">Dr. Deepika Yadav</h5><hr>
+                      <p class="card-text">Bioinformatics <br>.</p>
+                    </div>
+                </div>
+                <div class="card me-4 shdw border-0 txtshadow" style="width: 15rem;display: inline-block;">
+                    <img src="{% static 'images/women (2).png' %}" class="card-img-top w-100 p-1 rounded-circle
+                    " alt="..." height="250px">
+                    <div class="card-body">
+                      <h5 class="card-title txtcolor">Dr. Shakti Mehrotra</h5><hr>
+                      <p class="card-text">Molecular Biology and Plant Tissue Culture</p>
+                    </div>
+                </div>
+                <div class="card border-0 shdw txtshadow" style="width: 15rem;display: inline-block;">
+                    <img src="{% static 'images/women (2).png' %}" class="card-img-top w-100 p-1 rounded-circle" alt="..." height="250px">
+                    <div class="card-body">
+                      <h5 class="card-title txtcolor">Dr. Vineeta Singh</h5><hr>
+                      <p class="card-text">Microbiology and Industrial Biotechnology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+</div>
+<!--============================= Header End =============================-->
+
+<!--============================ About Start =====================-->
+
+<!--============================ About End =========================-->
+
+{% endblock %}

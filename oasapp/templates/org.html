@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %} Organization {% endblock %}
+{% block body %}
+{% load static %}
+
+<!--========================== Header Start ===========================-->
+<div class="container-fluid p-0">
+    <div class="row my-1" style="height: 200px;background-image: url(../static/images/chimacal.jpg);background-size: 100%;background-position: center 20%;">
+        <div class="col-sm-12" style="background-color: rgba(0, 0, 0, 0.664);">
+            <h1 class="text-center text-white" style="margin-top:6%;text-shadow: 5px 5px 5px black;">Our Organization</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-sm-6">
+                <img src="{% static 'images/biotechpark.jpeg' %}" alt="" class="w-100 ms-auto" height="500px">
+            </div>
+            <div class="col-sm-6">
+                <h2 class="bgcolor text-white ps-2 shadow">About Organization</h2> <hr>
+                <p style="text-align: justify;font-weight:500;">The Biotechnology Park in Lucknow, known as the City of Nawabs, has transformed into a leading Biotechnology City in North India. Established in 2002 through a partnership between the Department of Biotechnology, Government of India, and the Department of Science and Technology, Government of Uttar Pradesh, it became fully operational by 2007. Registered under the Indian Societies Act of 1868, the park operates under a robust governance framework ensuring efficiency, transparency, and accountability. Located strategically in Lucknow, renowned for its cultural heritage and administrative significance, the park is a hub for biotechnology-driven enterprises. It catalyzes advancements in agriculture, healthcare, and industrial applications through cutting-edge facilities. By facilitating collaboration among academia, industry, and government, it promotes innovation, technology transfer, and skill development in biotechnology. Beyond economic growth, the park fosters social development by creating employment opportunities, promoting sustainable practices, and enhancing India's global biotechnology leadership. With state-of-the-art infrastructure and a commitment to excellence, Biotech Park, Lucknow, continues to drive forward as a pivotal player in India's biotech sector.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-sm-12" style="min-height: 400px;background-image: url(../static/images/back3.jpg);background-size: 100%;">
+            <div class="row" style="background-color: rgba(0, 0, 0, 0.712);">
+                <div class="col-sm-5 bg-white ms-auto my-5 rounded-5" style="box-shadow: 5px 5px 10px grey;">
+                    <ul style="list-style-type: none;" class="p-4">
+                        <li><h4 class="fw-bold"><i class="fa-solid fa-bullseye" style="color: rgb(12, 201, 12);"></i> &nbsp;Misson</h4></li>
+                        <li><p>Ushering in improving the quality of life and economic status through biotechnological interventions.</p></li>
+                        <li><h4 class="fw-bold"><i class="fa-solid fa-eye-low-vision" style="color: rgb(12, 201, 12);"></i> &nbsp;Vision</h4></li>
+                        <li>
+                            <p>The mission of the Biotech Park is to:</p>
+                            <ol>
+                                <li>develop knowledge based economy in biotechnology</li>
+                                <li>assure benefits of biotechnology to all sections of the society, and</li>
+                                <li>promote entrepreneurship in biotechnology based industry</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-5 me-auto">
+                    <ul style="list-style-type: none;margin-top: 15%;" >
+                        <li class="bg-white p-3 rounded-pill" style="box-shadow: 5px 5px 10px grey;"><i class="fa-solid fa-building" style="font-size: 26px; color:rgb(12, 201, 12);"></i> &nbsp; Lucknow named Biotech City during January 2002 Congress.</li>
+                        <li class="bg-white p-3 mt-3 rounded-pill" style="box-shadow: 5px 5px 10px grey;"><i class="fa-solid fa-building-wheat" style="font-size: 26px; color:rgb(12, 201, 12);"></i> &nbsp; Sri Kapil Sibal inaugurated Biotech Park on 7th December 2008.</li>
+                        <li class="bg-white p-3 mt-3 rounded-pill" style="box-shadow: 5px 5px 10px grey;"><i class="fa-solid fa-building-shield" style="font-size: 26px; color:rgb(12, 201, 12);"></i> &nbsp; Sri Atal Bihari Vajpayee laid foundation stone on 21st May 2003.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--============================= Header End =============================-->
+
+<!--============================ About Start =====================-->
+
+<!--============================ About End =========================-->
+
+{% endblock %}

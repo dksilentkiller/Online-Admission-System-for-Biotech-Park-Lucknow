@@ -1,0 +1,59 @@
+{% extends 'studentlayout.html' %}
+{% block student %}
+<div class="container-fluid p-0">
+    <div class="row mt-4">
+        <div class="col-sm-4 bgcolor text-center text-white shadow-lg" style="border-radius: 0px 25px 25px 0px " data-aos="fade-right"><h2>Application Form</h2></div>
+    </div> 
+    <div class="row m-3 p-4 bg-light shdw rounded-3">
+          <form method="post" class="form-group" action="{% url 'upsave' %}">
+            {% csrf_token %}
+           <div class="row mb-2">
+                <div class="col-sm-6" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Name </p>
+                    <input type="text" class="form-control inpcolor rounded-pill" name="name" value="{{sh.name}}" required>
+                </div>
+                <div class="col-sm-6" data-aos="fade-down">
+                    <p class="txtcolor fw-bold">Enter Your Gender </p>
+                    <input type="radio" class=" inpcolor rounded-pill inpcolor mx-3" name="gender" value="male"  {% if sh.gender == 'male' %}checked{% endif %}  required><span class="txtcolor fs-5">Male</span>
+                    <input type="radio" class=" inpcolor rounded-pill inpcolor mx-3" name="gender" value="female" {% if sh.gender == 'female' %}checked{% endif %} required><span class="txtcolor fs-5">Female</span>
+                    <input type="radio" class=" inpcolor rounded-pill inpcolor mx-3" name="gender" value="other" {% if sh.gender == 'other' %}checked{% endif %} required><span class="txtcolor fs-5">Other</span>
+                </div> 
+           </div>
+           <div class="row mb-2">
+                <div class="col-sm-4" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Email </p>
+                    <input type="email" class="form-control inpcolor rounded-pill" name="emailaddress" value="{{sh.emailaddress}}" readonly required>
+                </div>
+                <div class="col-sm-4" data-aos="fade-down">
+                    <p class="txtcolor fw-bold">Enter Your Contact No. </p>
+                    <input type="text" class="form-control inpcolor rounded-pill" name="contactno" value="{{sh.contactno}}" required readonly>
+                </div>
+                <div class="col-sm-4" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your DOB </p>
+                    <input type="date" class="form-control inpcolor rounded-pill" name="dob" value="{{sh.dob}}" required>
+                </div>
+           </div>
+           <div class="row mb-2">
+                <div class="col-sm-6" data-aos="fade-down">
+                    <p class="txtcolor fw-bold">Enter Your Father's Name </p>
+                    <input type="text" class="form-control inpcolor rounded-pill" value="{{sh.fname}}" name="fname" required>
+                </div>
+                <div class="col-sm-6" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Mother's Name </p>
+                    <input type="text" class="form-control inpcolor rounded-pill" name="mname" value="{{sh.mname}}" required>
+                </div>
+           </div>
+           <div class="row mb-2">
+                <div class="col-sm-12" data-aos="fade-up">
+                    <p class="txtcolor fw-bold">Enter Your Full Address</p>
+                    <textarea name="address" id="" rows="2" class="form-control inpcolor rounded-pill" required>{{sh.address}}</textarea>
+                </div>
+            </div>
+           <div class="col-sm-12 my-3">
+                <input type="submit" class="btn bt form-control" value="Next">
+           </div>
+        </form>
+    </div>
+</div>  
+
+{% endblock %}

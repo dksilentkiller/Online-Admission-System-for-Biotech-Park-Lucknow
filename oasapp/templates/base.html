@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link href="{% static 'images/biologo.png' %}" rel="icon">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="row pt-3 text-light w100" style="background-color: #0051c3;">
+        <div class="col-md-6 " style="padding-left: 30px;">
+            <p><i class="fa-regular fa-clock"></i>&nbsp;&nbsp;The Biotech Park Is Open From 9:00 am to 7:00 pm
+            </p>
+        </div>
+        <div class="col-md-6 text-end" id="datetime" style=" padding-right: 30px;"></div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const time = now.toLocaleTimeString();
+            const date = now.toLocaleDateString(undefined, options);
+
+            document.getElementById('datetime').textContent = date + ' ' + time;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+        <!--======================== Navbar start ====================================-->
+        <div class="row sticky-top"  id="home">  
+            <nav class="navbar navbar-expand-lg bgcolor p-4" id="navbar">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="{% static 'images/Biotech logo.jpg' %}" alt="" class="w-" height="65">
+                    &nbsp;
+                    <span class="text-light" id="bioname">
+                      Biotech Park, Lucknow <br>
+                      <p><i>Where cutting edge science prospers...</i></p>
+                    </span>                                   
+                  </a>
+                  <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navul">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          The Park
+                        </a>
+                        <ul class="dropdown-menu drop">
+                          <li><a class="dropdown-item text-black" href="{% url 'org' %}">Organization</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'whybiotech' %}">Why Biotech Park Lucknow ?</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'location' %}">Locations</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'certification' %}">Certifications</a></li>
+                          <li><a class="dropdown-item text-black" href="#">Our Collaborators</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'index' %}">Knowledge Network</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'activity' %}">Outreach Activities</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item text-black fw-bold" href="#">The People</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'ceo' %}">CEO</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'mentor' %}">Distinguished Science And Members</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'staff' %}">Scientific Staff</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'adminis' %}">Administration</a></li>
+                          <li><a class="dropdown-item text-black" href="#">Technical Support</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Facilities
+                        </a>
+                        <ul class="dropdown-menu drop">
+                          <li><a class="dropdown-item text-black" href="{% url 'services' %}">Services</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'labs' %}">Research Park & Labs</a></li>
+                          <li><a class="dropdown-item text-black" href="#">Conference Hall</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Skill Development
+                        </a>
+                        <ul class="dropdown-menu drop">
+                          <li><a class="dropdown-item text-black" href="#">HRD Overview</a></li>
+                          <li><a class="dropdown-item text-black" href="">Training Program and Educational Outreach</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'courses' %}">Certificate Courses Approved By <br />Baba Saheb Bhimrao Amdedkar University </a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'skill' %}">Up Skill Development Mission Sponsored <br />Program</a></li>
+                          <li><a class="dropdown-item text-black" href="{% url 'training' %}">Vocational Training</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Business
+                        </a>
+                        <ul class="dropdown-menu drop">
+                          <li><a class="dropdown-item text-black" href="#">Tenders</a></li>
+                          <li><a class="dropdown-item text-black" href="#">Policy Documents</a></li>
+                          <li><a class="dropdown-item text-black" href="#">Resident Companies</a></li>
+                          <li><a class="dropdown-item text-black" href="#">Biotech Funding</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Success Stories</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">News & Events</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Contact Us
+                        </a>
+                        <ul class="dropdown-menu drop" style="">
+                          <!-- <li><a class="dropdown-item text-black" href="#">Training Program For Student From North-East India</a></li>
+                          <li><a class="dropdown-item text-black" href="#">Training Program</a></li>
+                          <li><a class="dropdown-item text-black" href="#">Services</a></li> -->
+                          <li><a class="dropdown-item text-black" href="{% url 'contact' %}">General</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <div>
+                      <a href="{% url 'login' %}"><button type="button" class="btn bt btn-md rounded-pill fw-bold" style="background-color:white;color: darkblue;box-shadow: 0px 0px 5px white;">Log In</button></a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
+        <!--========================= Navbar end =======================================-->
+
+        <!-- main Start -->
+        {% block body %}
+        <div class="container-fluid">
+
+
+        </div>
+        {% endblock %}
+        <!-- main End -->
+
+
+                <!-- Enquiry Modal Start -->
+                <div class="container">
+
+                  <button type="button" class="btn mybtn text-white" data-bs-toggle="modal" data-bs-target="#enquirymodal"
+                      style="z-index: 1000; border: 1px solid blue; position:fixed; right:-55px; top: 70%; width: 150px; background-color: blue; display: inline-block; transform: rotate(270deg); animation: glow 1.5s infinite;">
+                      <i class="fa-solid fa-user"></i> Enquire Now </button>
+                  <style>
+                      @keyframes glow {
+                          0% {
+                              box-shadow: 0 0 5px rgb(249, 253, 3);
+                          }
+      
+                          50% {
+                              box-shadow: 0 0 20px rgb(249, 253, 3);
+                          }
+      
+                          100% {
+                              box-shadow: 0 0 5px rgb(249, 253, 3);
+                          }
+                      }
+                  </style>
+      
+      
+                  <div class="modal fade" id="enquirymodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                      aria-labelledby="enquirymodalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="enquirymodalLabel">Ask Your Enquiries hare ....</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+      
+                              <div class="modal-body">
+      
+                                  <form id="enquiryForm" method="post" action="">
+                                      {% csrf_token %}
+                                      <div class="mb-3">
+                                          <label for="name" class="form-label">Name</label>
+                                          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                                      </div>
+                                  
+                                      <div class="mb-3">
+                                          <label for="gender" class="form-label">Gender</label>
+                                          <select class="form-select" id="gender" name="gender" required>
+                                              <option value="" disabled selected>Select your gender</option>
+                                              <option value="male">Male</option>
+                                              <option value="female">Female</option>
+                                              <option value="other">Other</option>
+                                          </select>
+                                      </div>
+                                  
+                                      <div class="mb-3">
+                                          <label for="address" class="form-label">Address</label>
+                                          <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" required>
+                                      </div>
+                                  
+                                      <div class="mb-3">
+                                          <label for="contact" class="form-label">Contact No.</label>
+                                          <input type="tel" class="form-control" id="contact" name="contact" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                                      </div>
+                                  
+                                      <div class="mb-3">
+                                          <label for="email" class="form-label">Email</label>
+                                          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                      </div>
+                                  
+                                      <div class="mb-3">
+                                          <label for="message" class="form-label">Your Message</label>
+                                          <textarea class="form-control" id="message" name="message" placeholder="Ask a question" rows="3" style="resize: none;" required></textarea>
+                                      </div>
+                                  
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  </form>
+                              
+                              </div>
+      
+                              <div class="modal-footer"></div>
+                          </div>
+                      </div>
+                  </div>
+      
+      
+      
+      
+              </div>
+              <!-- Enquiry Modal End -->
+
+
+              
+
+        <!--=========================== footer Start =========================================-->
+        <div class="row bgcolor"> 
+          <div class="container">
+            <div class="row text-white mx-3 my-5">
+              <div class="col-sm-4  mb-2">
+                <h4 class="fw-bold">Bio Tech Park Lucknow</h4>
+                <p>Biotech Park Sector G, Jankipuram, Kursi Road, <br> Lucknow - 226021 Uttar Pradesh - INDIA</p>
+                <P>
+                  <i class="fa-solid fa-phone"></i><span class="fw-bold"> Phone:</span> 91 522 4012091, 2365050 <br>
+                  <i class="fa-solid fa-envelope"></i><span class="fw-bold"> Email:</span> psceo@biotechpark.org.in <br>
+                  <i class="fa-solid fa-envelope"></i><span class="fw-bold"> Email:</span> services@biotechpark.org.in <br>
+                  <i class="fa-solid fa-envelope"></i><span class="fw-bold"> Email:</span> psceo@biotechpark.org.in <br>
+                  <i class="fa-solid fa-envelope"></i><span class="fw-bold"> Email:</span> trainingprograms@biotechpark.org.in</p><br>
+                  <span class="flinks"><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+                  <span class="flinks"><a href="#"><i class="fa-brands fa-twitter"></i></a></span>
+                  <span class="flinks"><a href="#"><i class="fa-brands fa-facebook"></i></a></span>
+                  <span class="flinks"><a href="#"><i class="fa-brands fa-linkedin"></i></a></span>
+                  <span class="flinks"><a href="#"><i class="fa-brands fa-google"></i></a></span>
+              </div>
+              <div class="col-sm-2">
+                <h4 class="fw-bold">Bio-Tech Info</h4><br>
+                <ul style="list-style-type: none;line-height:1.8;" class="footerul">
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">Policies</a></li>
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">Useful Links</a></li>
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">Networks</a></li>
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">Research Park</a></li>
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">Contact Updates</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-2">
+                <h4 class="fw-bold">Important Links</h4><br>
+                <ul style="list-style-type: none;line-height:1.8;" class="footerul">
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">Tenders</a></li>
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">Downloads</a></li>
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">E-Calender</a></li>
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">Directory</a></li>
+                  <li><i class="fa-solid fa-link"></i>&nbsp; <a href=""  class="a">WebMail</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <h4 class="fw-bold">Certification</h4><br>
+                <img src="{% static 'images/certification.jpg' %}" alt="" style="box-shadow: 0px 0px 15px lightskyblue;" class="w-75">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--=========================== footer End =========================================-->
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/splide.min.js' %}"></script>
+    <script>
+      var div=document.getElementById("slider");
+      div.style.backgroundImage="url(../static/images/chimacal.jpg)"
+      div.style.backgroundSize="cover";
+      div.style.backgroundPosition="center center";
+      function ag()
+      {
+        div.style.backgroundImage="url(../static/images/ag.jpeg)";
+        div.style.backgroundSize="cover";
+        div.style.backgroundPosition="center center";
+        //window.alert("hii hii");
+      }
+      function ch()
+      {
+        div.style.backgroundImage="url(../static/images/chimacal.jpg)";
+        div.style.backgroundSize="cover";
+        div.style.backgroundPosition="center center";
+        //window.alert("hii hii");
+      }
+      function so()
+      {
+        div.style.backgroundImage="url(../static/images/soil.jpg)";
+        div.style.backgroundSize="cover";
+        div.style.backgroundPosition="center center";
+        //window.alert("hii hii");
+      }
+      function solt()
+      {
+        div.style.backgroundImage="url(../static/images/soiltest.jpg)";
+        div.style.backgroundSize="cover";
+        div.style.backgroundPosition="center center";
+        //window.alert("hii hii");
+      }
+      function d()
+      {
+        div.style.backgroundImage="url(../static/images/chimacal.jpg)"
+        div.style.backgroundSize="cover";
+        div.style.backgroundPosition="center center";
+      }
+
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+    
+</body>
+</html>

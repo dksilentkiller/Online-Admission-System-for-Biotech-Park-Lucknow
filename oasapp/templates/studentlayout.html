@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="{% static 'images/biologo.png' %}" rel="icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 bgcolor p-0 shadow-lg" style="background-color:white;min-height: 100vh;">
+               <div class="sticky-top">
+                <h2 class="text-center text-white p-2">
+                    <img src="{% static 'images/ad.png' %}" alt="" height="100" class=""><br>
+                    Student Zone</h2><hr class="hr">
+                <a href="{% url 'studentlayout' %}" class="text-decoration-none"><p class="text-center text-white fw-bold"><i class="fa-solid fa-gauge-simple txtcolor"></i>&nbsp;Dashboard</p></a><hr class="hr">
+
+                <p class="text-center fw-bold"><a href="{% url 'stdprofile' %}"  class="text-decoration-none text-white"><i class="fa-solid fa-user txtcolor"></i>&nbsp;Application Form</a></p><hr class="hr">
+
+                <p class="text-center fw-bold"><a href="{% url 'docverification' %}"  class="text-decoration-none text-white"><i class="fa-solid fa-file txtcolor"></i>&nbsp;Document Verification </a></p><hr class="hr">
+
+                <p class="text-center fw-bold"><a href="{% url 'feespayment' %}"  class="text-decoration-none text-white"><i class="fa-solid fa-credit-card txtcolor"></i>&nbsp;Fees Payment</a></p><hr class="hr"><br><br><br>
+
+                <p class="text-center fw-bold"><a href="{% url 'changepass' %}"  class="text-decoration-none text-white"><i class="fa-solid fa-arrow-right-arrow-left txtcolor"></i>&nbsp;Change Password</a></p><hr class="hr">
+
+                <a href="{% url 'logout' %}" class="btn btn-light rounded-circle p-3 text-center" style="margin-left:40%;"><i class="fa-solid fa-right-from-bracket txtcolor fs-4"></i></a>
+                
+               </div>
+            </div>
+            <div class="col-sm-9">
+           
+                {% block student %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

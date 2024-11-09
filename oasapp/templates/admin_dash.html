@@ -1,0 +1,209 @@
+{% extends 'adminlayout.html' %}
+
+{% block admin %}
+<div class="p-4">
+    <h1 class="text-center">Welcome to the Admin Dashboard</h1>
+
+    <div class="row">
+        <!-- Overview Boxes -->
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Total Courses</h5>
+                    <p class="card-text">50</p> <!-- Replace with dynamic value -->
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'viewcourse' %}" class="text-white">View Courses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Total Students</h5>
+                    <p class="card-text">200</p> <!-- Replace with dynamic value -->
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'viewstudents' %}" class="text-white">View Students</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Total Enquiries</h5>
+                    <p class="card-text">30</p> <!-- Replace with dynamic value -->
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'showenq' %}" class="text-white">View Enquiries</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5 class="card-title">Active Sessions</h5>
+                    <p class="card-text">5</p> <!-- Replace with dynamic value -->
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'viewsession' %}" class="text-white">View Sessions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Recent Sessions Table -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Recent Sessions</h4>
+                </div>
+                <div class="card-body">
+                    <table id="sessionTable" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Session Name</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Session 1</td>
+                                <td>2024-10-01</td>
+                                <td>Active</td>
+                            </tr>
+                            <tr>
+                                <td>Session 2</td>
+                                <td>2024-10-15</td>
+                                <td>Completed</td>
+                            </tr>
+                            <!-- Add more sessions as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Enquiries Table -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Recent Enquiries</h4>
+                </div>
+                <div class="card-body">
+                    <table id="enquiryTable" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Course Interested</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>john@example.com</td>
+                                <td>Course A</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Jane Smith</td>
+                                <td>jane@example.com</td>
+                                <td>Course B</td>
+                                <td>Responded</td>
+                            </tr>
+                            <!-- Add more enquiries as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Recent Students Table -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Recent Students</h4>
+                </div>
+                <div class="card-body">
+                    <table id="studentTable" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Course Enrolled</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Emily Johnson</td>
+                                <td>emily@example.com</td>
+                                <td>Course C</td>
+                                <td>Active</td>
+                            </tr>
+                            <tr>
+                                <td>Michael Brown</td>
+                                <td>michael@example.com</td>
+                                <td>Course D</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <!-- Add more students as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fees Table -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Fees Overview</h4>
+                </div>
+                <div class="card-body">
+                    <table id="feesTable" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>$200</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>Jane Smith</td>
+                                <td>$150</td>
+                                <td>Pending</td>
+                            </tr>
+                            <!-- Add more fees records as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#sessionTable').DataTable();
+        $('#enquiryTable').DataTable();
+        $('#studentTable').DataTable();
+        $('#feesTable').DataTable();
+    });
+</script>
+{% endblock %}
